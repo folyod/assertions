@@ -1,15 +1,10 @@
-package assertions
+package assert
 
 import "net/mail"
 
-func StringLengthLess(value string, limit int) *AssertionError {
+func StringLengthLess(value string, limit int) (bool, int) {
 	actual := len(value)
-	isOk := actual < limit
-	if !isOk {
-		err := newError()
-	}
-
-	return nil
+	return actual < limit, actual
 }
 
 func StringLengthMore(value string, limit int) (bool, int) {
@@ -28,4 +23,8 @@ func StringIsNotEmpty(value string) bool {
 func IsEmail(value string) bool {
 	_, err := mail.ParseAddress(value)
 	return err == nil
+}
+
+func StringsEqual(v1 string, v2 string) bool {
+	return v1 == v2
 }
