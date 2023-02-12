@@ -6,14 +6,16 @@ import (
 	"strings"
 )
 
-var StringLengthLessCode = "string_length_less"
-var StringLengthMoreCode = "string_length_more"
-var StringIsEmptyCode = "string_empty"
-var StringIsNotEmptyCode = "string_not_empty"
-var IsEmailCode = "is_email"
-var StringsEqualCode = "strings_equal"
+const (
+	StringLengthLessCode = "string_length_less"
+	StringLengthMoreCode = "string_length_more"
+	StringIsEmptyCode    = "string_empty"
+	StringIsNotEmptyCode = "string_not_empty"
+	IsEmailCode          = "is_email"
+	StringsEqualCode     = "strings_equal"
+)
 
-var requiredKeys = []string{
+var requiredKeys = [...]string{
 	StringLengthLessCode,
 	StringLengthMoreCode,
 	StringIsEmptyCode,
